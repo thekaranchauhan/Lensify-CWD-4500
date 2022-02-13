@@ -119,6 +119,8 @@ function lensify_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	// add_theme_support ('wp-block-styles');
 }
 add_action( 'widgets_init', 'lensify_widgets_init' );
 

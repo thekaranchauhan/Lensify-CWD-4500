@@ -122,9 +122,6 @@ blockquote {
 .wp-block-table tbody, .wp-block-table thead, .wp-block-table tfoot {
     border-color: var(--color-gray);
 }
-.wp-block-table.is-style-redheader-table table, .wp-block-table.is-style-blueheader-table table {
-    border-collapse: separate;
-}
 .wp-block-table figcaption {
     color: var(--color-gray);
 }

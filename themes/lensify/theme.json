@@ -1,9 +1,75 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/theme.json",
     "version": 2,
     "settings": {
         "color": {
-            "defaultPalette" : false
+            "palette": [
+                {
+                    "name": "Black",
+                    "slug": "black",
+                    "color": "#000"
+                },
+                {
+                    "name": "White",
+                    "slug": "white",
+                    "color": "#fff"
+                },
+                {
+                    "name": "Gray",
+                    "slug": "Gray",
+                    "color": "#7288AD"
+                },
+                {
+                    "name": "Blue",
+                    "slug": "blue",
+                    "color": "#7288AD"
+                }
+            ]
+        },
+        "typography": {
+            "fontSizes": [
+                {
+                    "name": "Small",
+                    "size": "16px",
+                    "slug": "small"
+                },
+                {
+                    "name": "Default",
+                    "size": "18px",
+                    "slug": "regular"
+                },
+                {
+                    "name": "regular",
+                    "size": "24px",
+                    "slug": "regular"
+                },
+                {
+                    "name": "large",
+                    "size": "28px",
+                    "slug": "large"
+                },
+                {
+                    "name": "larger",
+                    "size": "32px",
+                    "slug": "larger"
+                },
+                {
+                    "name": "title",
+                    "size": "42px",
+                    "slug": "title"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "910px",
+            "wideSize": "1190px"
+        },
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "radius": false
+                }
+            }
         }
     }
 }

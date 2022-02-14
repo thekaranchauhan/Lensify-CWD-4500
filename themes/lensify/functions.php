@@ -124,11 +124,49 @@ function lensify_widgets_init() {
 }
 add_action( 'widgets_init', 'lensify_widgets_init' );
 
+if ( ! function_exists( 'lensify_preload_fonts')):
+	function lensify_preload_fonts(){
+		?>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">	
+		<?php
+	}
+
+endif;
+add_action( 'wp_head', 'lensify_preload_fonts' );
+
 /**
  * Enqueue scripts and styles.
  */
 function lensify_scripts() {
+
+	// Foundations Version 6.7.4
+	wp_enqueue_style(
+		'foundation-style',
+		get_template_directory_uri() . '/assets/css/vendor/foundation.min.css',
+		array(),
+		'6.7.4'
+	);
+
 	wp_enqueue_style( 'lensify-style', get_stylesheet_uri(), array(), Lensify_VERSION );
+
+	wp_enqueue_script(
+		'what-input-script',
+		get_template_directory_uri() . '/assets/js/vendor/what-input.js',
+		array( 'jquery' ),
+		'5.2.10',
+		true
+	);
+
+	wp_enqueue_script(
+		'foundation-script',
+		get_template_directory_uri() . '/assets/js/vendor/foundation.min.js',
+		array( 'jquery', 'what-input-script' ),
+		'6.7.4',
+		true
+	);
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

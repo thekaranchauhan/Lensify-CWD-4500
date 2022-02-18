@@ -20,9 +20,9 @@
                     "color": "#7288AD"
                 },
                 {
-                    "name": "Blue",
-                    "slug": "blue",
-                    "color": "#7288AD"
+                    "name": "Teal",
+                    "slug": "teal",
+                    "color": "#52BAC7"
                 }
             ]
         },
@@ -36,7 +36,7 @@
                 {
                     "name": "Default",
                     "size": "18px",
-                    "slug": "regular"
+                    "slug": "default"
                 },
                 {
                     "name": "regular",

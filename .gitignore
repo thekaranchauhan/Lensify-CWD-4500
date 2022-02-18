@@ -1,4 +1,4 @@
-# OS Generated Files
+# OS files
 .DS_Store
 .DS_Store?
 ._*
@@ -7,11 +7,19 @@
 ehthumbs.db
 Thumbs.db
 
-# Debug Files
+# Debug files
 *.log
 *.sql
 
-# WordPress standard files/folders
-
+# Wordpress standard files
 uploads
 upgrade
+
+# Wordpress plugin folders
+plugins/wpforms-lite
+plugins/woocommerce-services
+plugins/woocommerce-payments
+plugins/woo-gutenberg-products-block
+
+#SRC files
+node_modules

@@ -4,7 +4,7 @@ wp.domReady( function () {
 
 wp.blocks.registerBlockStyle( 'core/column', {
     name: 'gray-border',
-    label: 'Gray Bordert',
+    label: 'Gray Border',
 } );
 wp.blocks.registerBlockStyle( 'core/column', {
     name: 'teal-border',
@@ -36,4 +36,7 @@ wp.blocks.registerBlockStyle( 'core/table', {
 wp.blocks.registerBlockStyle( 'core/table', {
     name: 'teal-table',
     label: 'Teal Table',
+} );
+wp.domReady( function () {
+    wp.blocks.unregisterBlockStyle( 'core/table', 'stripes' );
 } );

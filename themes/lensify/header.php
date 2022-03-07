@@ -37,6 +37,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation cell small-12 medium-9">
+			<object id="icon-menu" data="assets/img/hamburger_menu.svg" type="image/svg+xml"></object>
 			<?php
 			wp_nav_menu(
 				array(

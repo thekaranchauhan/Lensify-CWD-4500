@@ -1,15 +1,15 @@
 <?php
 /**
- * Lensify functions and definitions
+ *  Lensify functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Lensify
  */
 
-if ( ! defined( 'Lensify_VERSION' ) ) {
+if ( ! defined( 'LENSIFY_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'Lensify_VERSION', '1.0.0' );
+	define( 'LENSIFY_VERSION', '1.0.0' );
 }
 
 /**
@@ -23,7 +23,7 @@ function lensify_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on Lensify, use a find and replace
+		* If you're building a theme based on  Lensify, use a find and replace
 		* to change 'lensify' to the name of your theme in all the template files.
 		*/
 	load_theme_textdomain( 'lensify', get_template_directory() . '/languages' );
@@ -119,23 +119,21 @@ function lensify_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-
-	// add_theme_support ('wp-block-styles');
 }
 add_action( 'widgets_init', 'lensify_widgets_init' );
 
-if ( ! function_exists( 'lensify_preload_fonts')):
-	function lensify_preload_fonts(){
+if ( ! function_exists( 'lensify_preload_webfonts' ) ) :
+
+	/* Get font face styles. */
+	function lensify_preload_webfonts() {
 		?>
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">	
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
 		<?php
 	}
-
 endif;
-add_action( 'wp_head', 'lensify_preload_fonts' );
+add_action( 'wp_head', 'lensify_preload_webfonts' );
 
 /**
  * Enqueue scripts and styles.
@@ -149,8 +147,25 @@ function lensify_scripts() {
 		array(),
 		'6.7.4'
 	);
+	
+	wp_enqueue_style(
+		'lensify-style',
+		get_stylesheet_uri(),
+		array(),
+		LENSIFY_VERSION
+	);
 
-	wp_enqueue_style( 'lensify-style', get_stylesheet_uri(), array(), Lensify_VERSION );
+	wp_enqueue_style(
+		'woocommerce-style',
+		get_template_directory_uri() . '/assets/css/woocommerce.css',
+	);
+
+	wp_enqueue_style(
+		'lensify-responsive-style',
+		get_template_directory_uri() . '/assets/css/responsive.css',
+		array(),
+		LENSIFY_VERSION
+	);
 
 	wp_enqueue_script(
 		'what-input-script',
@@ -167,7 +182,7 @@ function lensify_scripts() {
 		'6.7.4',
 		true
 	);
-	
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -194,4 +209,7 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/block-editor.php';
 
-
+/**
+ * Woocommerce additions.
+ */
+require get_template_directory() . '/inc/woocommerce.php';

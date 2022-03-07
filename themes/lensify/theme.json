@@ -39,22 +39,22 @@
                     "slug": "default"
                 },
                 {
-                    "name": "regular",
+                    "name": "Regular",
                     "size": "24px",
                     "slug": "regular"
                 },
                 {
-                    "name": "large",
+                    "name": "Large",
                     "size": "28px",
                     "slug": "large"
                 },
                 {
-                    "name": "larger",
+                    "name": "Larger",
                     "size": "32px",
                     "slug": "larger"
                 },
                 {
-                    "name": "title",
+                    "name": "Title",
                     "size": "42px",
                     "slug": "title"
                 }

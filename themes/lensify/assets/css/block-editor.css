@@ -33,8 +33,11 @@ body {
     grid-row: 1/-1;
     height: max-content;
 }
+.site-header a {
+    color: var(--colour-white) !important;
+}
 .site-header.white-header {
-    background-color: var(--colour-lightgray);
+    background-color: var(--colour-teal);
 }
 .main-navigation .menu {
     /* flex-direction: row !important; */
@@ -46,7 +49,7 @@ body {
     color: var(--colour-black);
 }
 .main-navigation .menu-item a:hover, .main-navigation .menu-item a:focus {
-    color: var(--colour-teal);
+    color: var(--colour-white);
 }
 #icon-menu {
     display: none;
@@ -133,7 +136,8 @@ h6 {font-size: var(--fontsize-small);}
 
 .entry-title {
     font-size: var(--fontsize-title);
-    margin-top: 50px;
+    display: none !important;
+    /* margin-top: 50px; */
 }
 
 
@@ -285,7 +289,8 @@ button.button:hover {
 
 
 .wp-block-cover {
-    min-height: 220px;
+    /* min-height: 220px; */
+    width: 1190px;
 }
 
 

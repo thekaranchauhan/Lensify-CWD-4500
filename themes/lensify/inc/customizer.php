@@ -55,6 +55,6 @@ function lensify_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function lensify_customize_preview_js() {
-	wp_enqueue_script( 'lensify-customizer', get_template_directory_uri() . 'assets/js/customizer.js', array( 'customize-preview' ), Lensify_VERSION, true );
+	wp_enqueue_script( 'lensify-customizer', get_template_directory_uri() . 'assets/js/customizer.js', array( 'customize-preview' ), LENSIFY_VERSION, true );
 }
 add_action( 'customize_preview_init', 'lensify_customize_preview_js' );

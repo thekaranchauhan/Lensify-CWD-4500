@@ -35,7 +35,7 @@ ul.products {
 
 #store-menu {
     box-shadow: 0 3px 6px #000;
-    background-color: var(--colour-white);
+    background-color: var(--colour-lightgray);
     height: 55px;
     padding: 0 30px;
     justify-content: flex-end;
@@ -197,6 +197,10 @@ input {
     height: 40px;
     justify-content: space-around;
     margin-bottom: 45px;
+}
+.woocommerce-MyAccount-navigation ul ol {
+    display: flex !important;
+    flex-direction: row !important;
 }
 .woocommerce-MyAccount-navigation a {
     color: var(--colour-black);

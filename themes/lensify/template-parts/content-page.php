@@ -10,8 +10,25 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<?php if ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) : ?>
+		<nav id="lensify_woocommerce_nav">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-store',
+					'menu_id'        => 'store-menu',
+				)
+			);
+			?>
+		</nav>
+	<?php endif; ?>
+	<header class="entry-header <?php if( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) { ?> alignwide <?php } ?> ">
+		<?php 
+		if ( ! is_shop() ) : 
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		else : ?>
+			<h1 class="entry-title">Choose a T. Style</h1>
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php lensify_post_thumbnail(); ?>
@@ -19,6 +36,10 @@
 	<div class="entry-content">
 		<?php
 		the_content();
+
+		if ( ! is_shop() ) : ?>
+			<h1 class="entry-title">Browse Lens</h1>
+		<?php endif;
 
 		wp_link_pages(
 			array(

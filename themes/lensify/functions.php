@@ -147,6 +147,14 @@ function lensify_scripts() {
 		array(),
 		'6.7.4'
 	);
+
+	wp_enqueue_script(
+		'foundation-script',
+		get_template_directory_uri() . '/assets/js/vendor/foundation.min.js',
+		array( 'jquery', 'what-input-script' ),
+		'6.7.4',
+		true
+	);
 	
 	wp_enqueue_style(
 		'lensify-style',
@@ -175,13 +183,25 @@ function lensify_scripts() {
 		true
 	);
 
-	wp_enqueue_script(
-		'foundation-script',
-		get_template_directory_uri() . '/assets/js/vendor/foundation.min.js',
-		array( 'jquery', 'what-input-script' ),
-		'6.7.4',
-		true
-	);
+	if ( is_page( 'cart' ) ) {
+		wp_enqueue_script(
+			'lensify-cart-replace-txt-script',
+			get_template_directory_uri() . '/assets/js/cart-replacer.js',
+			array(),
+			null,
+			true
+		);
+	}
+
+	if ( is_page( 'checkout' ) ) {
+		wp_enqueue_script(
+			'lensify-checkout-script',
+			get_template_directory_uri() . '/assets/js/checkout.js',
+			array(),
+			null,
+			true
+		);
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

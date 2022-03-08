@@ -44,6 +44,10 @@ body {
     justify-content: flex-end;
     font-size: var(--fontsize-default);
 }
+.main-navigation .menu ul, ol{
+    display: flex;
+    flex-direction: row;
+}
 .main-navigation .menu-item a {
     transition: color 0.4s;
     color: var(--colour-black);
@@ -136,7 +140,7 @@ h6 {font-size: var(--fontsize-small);}
 
 .entry-title {
     font-size: var(--fontsize-title);
-    display: none !important;
+    /* display: none !important; */
     /* margin-top: 50px; */
 }
 
@@ -150,8 +154,8 @@ figcaption {
 
 
 ul, ol {
-    display:flex;
-    flex-direction: row;
+    /* display:flex;
+    flex-direction: row; */
     list-style-type: none !important;
     /* list-style-position: inside !important; */
 }

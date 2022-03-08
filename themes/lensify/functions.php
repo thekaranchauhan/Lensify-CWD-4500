@@ -183,7 +183,7 @@ function lensify_scripts() {
 		true
 	);
 
-	if ( is_page( 'cart' ) ) {
+	if ( is_page( array( 'cart', 'checkout' ) ) ) {
 		wp_enqueue_script(
 			'lensify-cart-replace-txt-script',
 			get_template_directory_uri() . '/assets/js/cart-replacer.js',

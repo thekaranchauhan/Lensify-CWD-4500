@@ -206,14 +206,16 @@ blockquote {
 
 
 .wp-block-button, a.button, button.button {
-    height: 44px;
+    height: 40px;
     transition: background-color 0.4s;
     background-color: var(--colour-teal);
     border-radius: 3px;
+    color: #000;
     font-size: var(--fontsize-default);
     align-items: center;
     padding-top: 0;
     padding-bottom: 0;
+    line-height: 35px !important;
 }
 .wp-block-button__link {
     padding: 0 1em;

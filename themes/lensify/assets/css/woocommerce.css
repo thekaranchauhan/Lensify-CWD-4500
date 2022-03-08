@@ -309,3 +309,45 @@ input {
     padding-top: 10px;
     padding-bottom: 0;
 }
+
+
+
+.lensify-hidden {
+    display: none;
+}
+.lensify-product-data .variation {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    font-size: var(--fontsize-small);
+}
+.lensify-product-data .variation dt {
+    font-weight: normal;
+    margin-right: 5px;
+}
+.lensify-product-data .variation dd {
+    margin-right: 15px;
+}
+.lensify-order-review-wrapper {
+    margin-top: 40px;
+}
+.lensify-totals-wrapper {
+    margin-bottom: 30px;
+    border-left: 8px solid var(--colour-lightgray);
+    padding: 10px 15px 15px;
+}
+.lensify-payment-wrapper {
+    margin-bottom: 30px;
+    border-left: 8px solid var(--colour-teal);
+    padding: 10px 15px 15px;
+}
+.lensify-payment-wrapper .woocommerce-terms-and-conditions-wrapper {
+    display: none;
+}
+.woocommerce-checkout-payment .payment_methods {
+    list-style: none;
+    margin-left: 0;
+}
+.woocommerce-checkout-payment .place-order {
+    text-align: center;
+} 

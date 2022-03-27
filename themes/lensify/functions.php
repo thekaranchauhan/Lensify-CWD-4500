@@ -1,6 +1,6 @@
 <?php
 /**
- *  Lensify functions and definitions
+ * Lensify functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -23,7 +23,7 @@ function lensify_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on  Lensify, use a find and replace
+		* If you're building a theme based on Lensify, use a find and replace
 		* to change 'lensify' to the name of your theme in all the template files.
 		*/
 	load_theme_textdomain( 'lensify', get_template_directory() . '/languages' );
@@ -46,10 +46,11 @@ function lensify_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus(
 		array(
 			'menu-primary' => esc_html__( 'Primary', 'lensify' ),
+			'menu-store' => esc_html__('Store', 'lensify')
 		)
 	);
 
@@ -129,7 +130,7 @@ if ( ! function_exists( 'lensify_preload_webfonts' ) ) :
 		?>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
 		<?php
 	}
 endif;
@@ -193,6 +194,16 @@ function lensify_scripts() {
 		);
 	}
 
+	if ( is_product() ) {
+		wp_enqueue_script(
+			'lensify-product-replace-txt-script',
+			get_template_directory_uri() . '/assets/js/product-text-replacer.js',
+			array(),
+			null,
+			true
+		);
+	}
+
 	if ( is_page( 'checkout' ) ) {
 		wp_enqueue_script(
 			'lensify-checkout-script',
@@ -233,3 +244,8 @@ require get_template_directory() . '/inc/block-editor.php';
  * Woocommerce additions.
  */
 require get_template_directory() . '/inc/woocommerce.php';
+
+/**
+ * Custom post type additions.
+ */
+require get_template_directory() . '/inc/post-types.php';

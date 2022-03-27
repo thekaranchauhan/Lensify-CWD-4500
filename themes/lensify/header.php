@@ -26,7 +26,8 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'lensify' ); ?></a>
 
 	<?php if ( is_front_page() ) :?>
-	<header id="masthead" class="site-header white-header grid-x align-middle">
+	<div id="lensify-front-page-wrapper">
+		<header id="masthead" class="site-header white-header grid-x align-middle">
 	<?php else : ?>
 	<header id="masthead" class="site-header grid-x  align-middle">
 	<?php endif; ?>
@@ -37,7 +38,8 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation cell small-12 medium-9">
-			<object id="icon-menu" data="assets/img/hamburger_menu.svg" type="image/svg+xml"></object>
+			<!-- Add button do normal css/js link to 'primary-menu' id tag -->
+			<object id="icon-menu" data="assets/img/icons/menu-icon.svg" type="image/svg+xml"></object>
 			<?php
 			wp_nav_menu(
 				array(

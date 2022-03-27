@@ -30,7 +30,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<div class="barleft-content barleft-red">
+		<div class="barleft-content barleft-tomato">
 			<?php 
 			lensify_post_thumbnail(); 
 			the_content(

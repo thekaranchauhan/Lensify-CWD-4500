@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package lensify
+ * @package Lensify
  */
 
 ?>
@@ -24,8 +24,8 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				lensify_posted_on();
 				lensify_posted_by();
+				lensify_posted_on();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

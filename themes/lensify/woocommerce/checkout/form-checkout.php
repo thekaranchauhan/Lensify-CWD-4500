@@ -2,13 +2,10 @@
 /**
  * Checkout Form
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/checkout/form-checkout.php.
+ * This template overides the template under plugins/woocommerce/checkout/form-checkout.php.
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
+ * If the original woocommerce template is updated, this template will need
+ * to be updated to maintain compatibility.
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
@@ -54,7 +51,7 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	<?php if ( $checkout->get_checkout_fields() ) : ?>
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-		<section class="lensify-checkout-addresses cell small-12 grid-x">
+		<section class="-checkout-addresses cell small-12 grid-x">
 			<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
 				<div class="u-columns woocommerce-Addresses col2-set addresses cell small-12 grid-x">
 			<?php endif; ?>
@@ -94,21 +91,9 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 			</article>
 		</section>
 
-		
-			<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
-            <section class="cell small-12">
+		<section class="cell small-12">
 			<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 			<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
-		</section>
-
-		<section class="cell small-12 wp-block-group is-style-sandwich-group lensify-order-review-wrapper">
-			<h3 id="order_review_heading"><?php esc_html_e( 'My Order', 'woocommerce' ); ?></h3>
-
-			<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-
-			<div id="order_review" class="woocommerce-checkout-review-order">
-				<?php do_action( 'woocommerce_checkout_order_review' ); ?>
-			</div>
 		</section>
 
 		<section class="cell small-12 wp-block-group is-style-sandwich-group lensify-order-review-wrapper">

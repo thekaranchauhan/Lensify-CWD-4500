@@ -10,45 +10,29 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() || is_product() ) : ?>
-		<nav id="lensify_woocommerce_nav">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-store',
-					'menu_id'        => 'store-menu',
-				)
-			);
-			?>
-		</nav>
-	<?php endif; ?>
-	<header class="entry-header <?php if( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) { ?> alignwide <?php } ?> ">
-		<?php 
-		if ( ! is_shop() ) : 
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else : ?>
-			<h1 class="entry-title">Choose a T. Style</h1>
-		<?php endif; ?>
+	<header class="entry-header">
+		<div class="small-content">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</div><!-- small-content -->
 	</header><!-- .entry-header -->
 
 	<?php lensify_post_thumbnail(); ?>
 
 	<div class="entry-content">
-		<?php
-		the_content();
+		<div class="small-container">
+			<div class="small-content">
+				<?php
+				the_content();
 
-		if ( ! is_shop() ) : ?>
-			<h1 class="entry-title">Browse Designs</h1>
-			<!-- dislay woocommerce archive for design -->
-		<?php endif;
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'lensify' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+				wp_link_pages(
+					array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tlensify' ),
+						'after'  => '</div>',
+					)
+				);
+				?>
+			</div><!-- small-content -->
+		</div><!-- small-container -->
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

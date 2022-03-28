@@ -1,14 +1,17 @@
 wp.domReady( function () {
     wp.blocks.unregisterBlockStyle( 'core/button', 'outline' );
+});
+wp.domReady( function () {
+    wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
 } );
 
 wp.blocks.registerBlockStyle( 'core/column', {
-    name: 'gray-border',
-    label: 'Gray Border',
+    name: 'blue-column',
+    label: 'Blue Border',
 } );
 wp.blocks.registerBlockStyle( 'core/column', {
-    name: 'teal-border',
-    label: 'Teal Border',
+    name: 'tomato-column',
+    label: 'Tomato Border',
 } );
 
 wp.blocks.registerBlockStyle( 'core/media-text', {
@@ -27,15 +30,15 @@ wp.blocks.registerBlockStyle( 'core/group', {
 
 wp.domReady( function () {
     wp.blocks.unregisterBlockStyle( 'core/quote', 'plain' );
-} );
+} ); 
 
 wp.blocks.registerBlockStyle( 'core/table', {
-    name: 'gray-table',
-    label: 'Gray Table',
+    name: 'tomato-table',
+    label: 'Tomato Table',
 } );
 wp.blocks.registerBlockStyle( 'core/table', {
-    name: 'teal-table',
-    label: 'Teal Table',
+    name: 'blue-table',
+    label: 'Blue Table',
 } );
 wp.domReady( function () {
     wp.blocks.unregisterBlockStyle( 'core/table', 'stripes' );

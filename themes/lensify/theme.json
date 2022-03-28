@@ -19,18 +19,23 @@
                 },
                 {
                     "name": "L-Grey",
-                    "slug": "lgray",
+                    "slug": "lgrey",
                     "color": "#92a9bd"
                 },
                 {
                     "name": "L-Light Grey",
-                    "slug": "lgrey",
+                    "slug": "ltgrey",
                     "color": "#c6c6c8"
                 },
                 {
                     "name": "L-Blue",
                     "slug": "lblue",
                     "color": "#4d96ff"
+                },
+                {
+                    "name": "L-Light Blue",
+                    "slug": "ltblue",
+                    "color": "#caf0f8"
                 },
                 {
                     "name": "T-Tomato",
@@ -53,7 +58,7 @@
                 {
                     "name": "Default",
                     "size": "18px",
-                    "slug": "regular"
+                    "slug": "default"
                 },
                 {
                     "name": "Regular",
@@ -76,9 +81,9 @@
                     "slug": "x-large"
                 },
                 {
-                    "name": "Extra Extra Large",
-                    "size": "80px",
-                    "slug": "xx-large"
+                    "name": "Title",
+                    "size": "60px",
+                    "slug": "title"
                 }
             ]
         },

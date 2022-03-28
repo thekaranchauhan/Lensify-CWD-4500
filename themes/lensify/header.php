@@ -35,10 +35,9 @@
 			<?php
 			the_custom_logo();
 			?>
-		</div><!-- .site-branding -->
+		</div>
 
 		<nav id="site-navigation" class="main-navigation cell small-12 medium-9">
-			<!-- Add button do normal css/js link to 'primary-menu' id tag -->
 			<object id="icon-menu" data="assets/img/icons/menu-icon.svg" type="image/svg+xml"></object>
 			<?php
 			wp_nav_menu(

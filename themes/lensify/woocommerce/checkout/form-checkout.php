@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
-// If checkout registration is disabled and not logged in, the user cannot checkout.
+// If user is not logged in, he/she cannot checkout
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
 	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) ) );
 	return;
@@ -51,7 +51,7 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	<?php if ( $checkout->get_checkout_fields() ) : ?>
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-		<section class="-checkout-addresses cell small-12 grid-x">
+		<section class="lensify-checkout-addresses cell small-12 grid-x">
 			<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
 				<div class="u-columns woocommerce-Addresses col2-set addresses cell small-12 grid-x">
 			<?php endif; ?>

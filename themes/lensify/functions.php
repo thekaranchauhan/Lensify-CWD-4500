@@ -8,7 +8,7 @@
  */
 
 if ( ! defined( 'LENSIFY_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
+	// Updating and replacing the site version
 	define( 'LENSIFY_VERSION', '1.0.0' );
 }
 
@@ -70,7 +70,6 @@ function lensify_setup() {
 			'script',
 		)
 	);
-
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -104,6 +103,15 @@ function lensify_content_width() {
 add_action( 'after_setup_theme', 'lensify_content_width', 0 );
 
 /**
+ * Function to determine if the page lists more than one post
+ * 
+ * @link https://wordpress.stackexchange.com/a/141668
+ */
+function is_blog () {
+    return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag() && 'post' == get_post_type());
+}
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -130,7 +138,7 @@ if ( ! function_exists( 'lensify_preload_webfonts' ) ) :
 		?>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 		<?php
 	}
 endif;
@@ -155,6 +163,10 @@ function lensify_scripts() {
 		array( 'jquery', 'what-input-script' ),
 		'6.7.4',
 		true
+	);
+	wp_enqueue_style(
+		'page-style',
+		get_template_directory_uri() . '/assets/css/page-styles.css',
 	);
 	
 	wp_enqueue_style(
@@ -193,6 +205,13 @@ function lensify_scripts() {
 			true
 		);
 	}
+	wp_enqueue_script(
+		'menu-script',
+		get_template_directory_uri() . '/assets/js/menu.js',
+		array(),
+		null,
+		true
+	);
 
 	if ( is_product() ) {
 		wp_enqueue_script(
@@ -220,32 +239,20 @@ function lensify_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'lensify_scripts' );
 
-/**
- * Custom template tags for this theme.
- */
+/* Custom template tags.*/
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
+/* Functions which enhance the theme by hooking into WordPress */
 require get_template_directory() . '/inc/template-functions.php';
 
-/**
- * Customizer additions.
- */
+/* Customizer additions*/
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Block editor additions.
- */
+/* Block editor. */
 require get_template_directory() . '/inc/block-editor.php';
 
-/**
- * Woocommerce additions.
- */
+/* Woocommerce. */
 require get_template_directory() . '/inc/woocommerce.php';
 
-/**
- * Custom post type additions.
- */
+/* Custom post type. */
 require get_template_directory() . '/inc/post-types.php';

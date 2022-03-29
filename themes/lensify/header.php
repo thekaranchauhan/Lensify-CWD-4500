@@ -26,19 +26,23 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'lensify' ); ?></a>
 
 	<?php if ( is_front_page() ) :?>
+		<!--  Site Identity -->
 	<div id="lensify-front-page-wrapper">
 		<header id="masthead" class="site-header white-header grid-x align-middle">
 	<?php else : ?>
 	<header id="masthead" class="site-header grid-x  align-middle">
 	<?php endif; ?>
-		<div class="site-branding cell small-12 medium-3">
+		<div class="site-branding cell small-6 medium-3">
 			<?php
+			// Displaying the custom logo uploaded to the site
 			the_custom_logo();
 			?>
 		</div>
-
-		<nav id="site-navigation" class="main-navigation cell small-12 medium-9">
-			<object id="icon-menu" data="assets/img/icons/menu-icon.svg" type="image/svg+xml"></object>
+		<!-- Navigation Bar -->
+		<nav id="site-navigation" class="main-navigation cell small-6 medium-9">
+			<div id="icon-menu-container">
+				<img id="icon-menu" src="../wp-content/themes/lensify/assets/img/icons/menu-icon.png" alt="menu">
+			</div>
 			<?php
 			wp_nav_menu(
 				array(
@@ -47,5 +51,5 @@
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
+		</nav>
 	</header><!-- #masthead -->

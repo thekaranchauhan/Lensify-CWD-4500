@@ -1,3 +1,5 @@
+
+   
 <?php
 /**
  * Cart Page
@@ -46,6 +48,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							}
 							?>
 						</div>
+						<!-- Product Info -->
 						<div class="lensify-product-info">
 							<p class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
 								<?php
@@ -69,7 +72,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
 							}
 							?>
-						</div> <!-- end of .lensify-product-info -->
+						</div> 
 						<div class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 						<?php
 						if ( $_product->is_sold_individually() ) {

@@ -1,3 +1,4 @@
+// Hide or show address forms
 let editLinks = document.getElementsByClassName('checkout-edit');
 const shipping = document.getElementById('lensify-checkout-shipping');
 const billing = document.getElementById('lensify-checkout-billing');

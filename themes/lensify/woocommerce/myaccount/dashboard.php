@@ -63,8 +63,8 @@ $col    = 1;
 			<?php endif; ?>
 	</aside>
 
-
-    <section class="cell large-7 medium-9 small-12 lensify-account-main">
+	<!-- User Profile -->
+	<section class="cell large-7 medium-9 small-12 lensify-account-main">
 		<h3>User Profile</h3>
 		<table>
 			<tbody>
@@ -88,8 +88,8 @@ $col    = 1;
 		</table>
 		<p><a>Edit profile</a></p>
 
-
-        <section class="wp-block-group is-style-sandwich-group">
+		<!-- Billing -->
+		<section class="wp-block-group is-style-sandwich-group">
 			<h3>Payment Details</h3>
 			<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
 				<div class="u-columns woocommerce-Addresses col2-set addresses">
@@ -128,9 +128,8 @@ $col    = 1;
 		</section>
 	</section>
 
-
-
-    <section class="cell large-3 medium-12 small-12 account-sidebar">
+	<!-- Orders -->
+	<section class="cell large-3 medium-12 small-12 account-sidebar">
 		<div>
 			<h3>Recent Orders</h3>
 			<p class="lensify-order-link"><a>View Order History</a></p>

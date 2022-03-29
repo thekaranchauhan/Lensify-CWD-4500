@@ -19,11 +19,12 @@ $popular_args = array(
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<?php if ( is_product() || is_page( array( 'cart', 'checkout' ) ) ) : ?>
+<footer id="colophon" class="site-footer">
+	<?php if ( is_product() || is_page( array( 'cart', 'checkout' ) ) ) : ?>
 		<section class="lensify-entry-footer-wide">
 			<div class="lensifytrendinglens-header">
-				<h2>Trending lens</h2>
+				<h2>Trending Lens</h2>
+				<p>Latest Trends, Top Picks and Cool Offers only at Lensify</p>
 			</div>
 			<div class="grid-x grid-margin-y grid-margin-x lensifytrendinglens">
 				<?php 
@@ -54,18 +55,17 @@ $popular_args = array(
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'lensify' ) ); ?>">
 				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'lensify' ), 'WordPress' );
 				?>
 			</a>
 			<span class="sep"> | </span>
 				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
+				/* Theme name and author */
 				printf( esc_html__( 'Theme: Lensify by %2$s.', 'lensify' ), 'lensify', '<a href="https://thekaranchauhan.com">Karan Chauhan</a>' );
 				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		</div>
+	</footer>
+</div>
 
 <?php wp_footer(); ?>
 

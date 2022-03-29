@@ -27,7 +27,7 @@
 		if ( ! is_shop() ) : 
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else : ?>
-			<h1 class="entry-title">Choose a T. Style</h1>
+			<h1 class="entry-title">Choose your Lens</h1>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
@@ -38,8 +38,7 @@
 		the_content();
 
 		if ( ! is_shop() ) : ?>
-			<h1 class="entry-title">Browse Designs</h1>
-			<!-- dislay woocommerce archive for design -->
+			<!-- Displaying woocommerce archive for design -->
 		<?php endif;
 
 		wp_link_pages(
@@ -49,7 +48,7 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">

@@ -266,14 +266,14 @@ ul.products {
 
 /* Product */
 .product_title.entry-title {
-    font-size: var(--fontsize-extra-large);
+    font-size: var(--fontsize-large);
     max-width: 435px;
     color: var(--color-white);
-    background-color: var(--color-black);
+    background-color: var(--color-blue);
     text-align: center;
-    padding-top: 7px;
-    margin: auto;
-    height: 78px;
+    padding:auto;
+    height: 48px;
+    z-index: 99;
 }
 /* Product Images */
 .woocommerce-product-gallery {

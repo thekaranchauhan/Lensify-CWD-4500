@@ -4,13 +4,10 @@
  *
  * Shows the first intro screen on the account dashboard.
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/dashboard.php.
+ * This template overides the template under plugins/woocommerce/myaccount/dashboard.php.
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
+ * If the original woocommerce template is updated, this template will need
+ * to be updated to maintain compatibility.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
@@ -59,12 +56,12 @@ $col    = 1;
 	<aside class="cell large-2 medium-3 small-12">
 		<?php
 			if ( $user ) : ?>
-				<img class="lensify-acc-profile-pic" src="<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>" />
+				<img class="-acc-profile-pic" src="<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>" />
 			<?php endif; ?>
 	</aside>
 
-	<!-- User Profile -->
-	<section class="cell large-7 medium-9 small-12 lensify-account-main">
+	<!-- Profile Section -->
+	<section class="cell large-7 medium-9 small-12 -account-main">
 		<h3>User Profile</h3>
 		<table>
 			<tbody>
@@ -88,7 +85,7 @@ $col    = 1;
 		</table>
 		<p><a>Edit profile</a></p>
 
-		<!-- Billing -->
+		<!-- Billing Section -->
 		<section class="wp-block-group is-style-sandwich-group">
 			<h3>Payment Details</h3>
 			<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
@@ -128,13 +125,13 @@ $col    = 1;
 		</section>
 	</section>
 
-	<!-- Orders -->
+	<!-- Orders Section -->
 	<section class="cell large-3 medium-12 small-12 account-sidebar">
 		<div>
 			<h3>Recent Orders</h3>
-			<p class="lensify-order-link"><a>View Order History</a></p>
-			<?php do_action( 'woocommerce_before_account_orders', $has_orders );
-			if ( $has_orders ) : ?>
+			<p class="-order-link"><a>View Order History</a></p>
+			<!-- <?php do_action( 'woocommerce_before_account_orders', $has_orders );
+			if ( $has_orders ) : ?> -->
 				<div class="account-orders-dashboard">
 				<?php for ($x=0; $x<=3; $x++) {
 					$customer_order = $customer_orders[$x];
